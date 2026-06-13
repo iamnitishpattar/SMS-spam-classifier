@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+# Virtual environment
+env/
+venv/
+.env
+
+# Data and Models
+data/
+models/
