@@ -50,9 +50,6 @@ graph TD
     B -->|Transform| C[TF-IDF Vectorization]
     C -->|Feature Vectors| D[Multinomial Naive Bayes Model]
     D -->|Train & Save| E[Exported Models .pkl]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
 ```
 
 ### 2️⃣ Application Architecture
@@ -63,11 +60,6 @@ graph LR
     Vectorizer -->|Numerical Data| Model[(Saved Naive Bayes Model)]
     Model -->|Spam/Ham Probability| App
     App -->|Displays Result| User
-    
-    style User fill:#dfd,stroke:#333,stroke-width:2px
-    style App fill:#fdd,stroke:#333,stroke-width:2px
-    style Vectorizer fill:#dff,stroke:#333,stroke-width:2px
-    style Model fill:#ddf,stroke:#333,stroke-width:2px
 ```
 
 ---
