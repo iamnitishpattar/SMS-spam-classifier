@@ -20,11 +20,55 @@
 
 ---
 
+## 📸 Application Showcase
+
+<div align="center">
+  <img src="assets/main_ui.png" width="800" alt="Main UI" style="border-radius:10px; margin-bottom: 20px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+  
+  <br>
+
+  <img src="assets/spam_prediction.png" width="400" alt="Spam Prediction" style="border-radius:10px; margin-right: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+  <img src="assets/ham_prediction.png" width="400" alt="Ham Prediction" style="border-radius:10px; margin-left: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+</div>
+
+---
+
 ## 🌟 Key Features
 
 - **Automated Pipeline:** The `train_model.py` script dynamically downloads the dataset, cleans it, trains the model, and exports the intelligence.
 - **High Accuracy:** Utilizes `TfidfVectorizer` and a `MultinomialNB` (Naive Bayes) classifier to achieve state-of-the-art results on standard datasets.
 - **Glassmorphism UI:** Test the AI in real-time through a beautiful, responsive, animated Flask web application.
+
+---
+
+## 🏗️ System Architecture
+
+### 1️⃣ Machine Learning Training Pipeline
+```mermaid
+graph TD
+    A[Raw SMS Data CSV] -->|Read & Clean| B[Data Preprocessing]
+    B -->|Transform| C[TF-IDF Vectorization]
+    C -->|Feature Vectors| D[Multinomial Naive Bayes Model]
+    D -->|Train & Save| E[Exported Models .pkl]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+```
+
+### 2️⃣ Application Architecture
+```mermaid
+graph LR
+    User[User / Web Browser] -->|Inputs Message| App[Flask Web Server]
+    App -->|Vectorizes Text| Vectorizer[(Saved TF-IDF Vectorizer)]
+    Vectorizer -->|Numerical Data| Model[(Saved Naive Bayes Model)]
+    Model -->|Spam/Ham Probability| App
+    App -->|Displays Result| User
+    
+    style User fill:#dfd,stroke:#333,stroke-width:2px
+    style App fill:#fdd,stroke:#333,stroke-width:2px
+    style Vectorizer fill:#dff,stroke:#333,stroke-width:2px
+    style Model fill:#ddf,stroke:#333,stroke-width:2px
+```
 
 ---
 
